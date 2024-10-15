@@ -1,0 +1,10 @@
+<h2>Città Preferite</h2>
+<button (click)="sortFavoritesByTemperature()">Ordina per temperatura</button>
+
+<div *ngFor="let favorite of favorites">
+  <h3>{{ favorite.city }}</h3>
+  <p>Temperatura: {{ favorite.temperature }}°C</p>
+  <p>Condizioni: {{ getWeatherCondition(favorite.weatherCondition) }}</p>
+  <p>Velocità del vento: {{ favorite.windSpeed }} km/h</p>
+  <button (click)="removeFromFavorites(favorite)">Rimuovi dai Preferiti</button>
+</div>

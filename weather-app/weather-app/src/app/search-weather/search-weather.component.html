@@ -1,0 +1,14 @@
+<div>
+    <h2>Ricerca Meteo</h2>
+    <input [(ngModel)]="city" placeholder="Inserisci città" />
+    <button (click)="searchWeather()">Cerca Meteo</button>
+    <button (click)="addToFavorites()">Aggiungi ai Preferiti</button>
+  </div>
+  
+  <div *ngIf="weatherData">
+    <h3>Meteo per {{ city }}</h3>
+    <p>Temperatura: {{ weatherData?.current_weather?.temperature }}°C</p>
+    <p>Condizioni: {{ weatherData?.current_weather?.weathercode }}</p>
+    <p>Velocità del vento: {{ weatherData?.current_weather?.windspeed }} km/h</p>
+  </div>
+  <canvas id="temperatureChart"></canvas>
